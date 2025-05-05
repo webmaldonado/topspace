@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             x:Class="TopSpaceMAUI.MainPage">
+
+    <!--xmlns:TitleView="clr-namespace:TopSpaceMAUI"-->
+    <!--<Shell.TitleView>
+        <TitleView:Title></TitleView:Title>
+    </Shell.TitleView>-->
+
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,*,*" RowSpacing="0" ColumnSpacing="0">
+        <Image x:Name="Banner" HeightRequest="300" Aspect="AspectFill" Source="https://topspacews.bayer.com.br:443/api/imglib/Download/a8516da4-ff2f-4997-958d-30899b686761" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="0" Grid.ColumnSpan="3"></Image>
+
+        <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8" MinimumHeightRequest="330"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="1" Grid.Column="0">
+            <VerticalStackLayout>
+
+                <Image Source="sync.png" HeightRequest="100"></Image>
+                <Label Text="Mantenha suas informações atualizadas com a sincronização. Colete dados importantes durante as visitas e envie-os para o servidor com um toque, permitindo que o negócio os analise em tempo real."
+                       TextColor="Black"
+                       FontSize="16"
+                       FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                <Button x:Name="btnSyncNow" IsEnabled="False" Text="Sincronize Agora!" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnSyncNow_Clicked" FontSize="16" Margin="30"></Button>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8" MinimumHeightRequest="330"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="1" Grid.Column="1">
+            <VerticalStackLayout>
+
+                <Image Source="check_in.png" HeightRequest="100"></Image>
+                <Label Text="Alcance suas metas com eficiência! Acesse a lista de farmácias sob sua responsabilidade e planeje suas visitas de forma estratégica, garantindo que cada farmácia receba a atenção necessária para fortalecer a presença da marca."
+                       TextColor="Black"
+                       FontSize="16"
+                       FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                <Button x:Name="btnMyPharmas" IsEnabled="False" Text="Acesse suas Farmacias!" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnMyPharmas_Clicked" FontSize="16" Margin="30"></Button>
+            </VerticalStackLayout>
+        </Border>
+
+        <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8" MinimumHeightRequest="330"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
+                Margin="5" Grid.Row="1" Grid.Column="2">
+            <VerticalStackLayout>
+
+                <Image Source="support.png" HeightRequest="100"></Image>
+                <Label Text="Em breve, você terá acesso a uma área de suporte dedicada para resolver problemas técnicos no app. Nossa equipe estará à disposição para garantir que o app funcione perfeitamente, apoiando você no seu trabalho em campo."
+                       TextColor="Black"
+                       FontSize="16"
+                       FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                <Button x:Name="btnAdmin" IsEnabled="False" Text="Suporte Bayer!" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnAdmin_Clicked" FontSize="16" Margin="30"></Button>
+            </VerticalStackLayout>
+        </Border>
+
+    </Grid>    
+
+
+</ContentPage>

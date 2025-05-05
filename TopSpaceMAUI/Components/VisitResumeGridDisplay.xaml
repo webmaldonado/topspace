@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.Components.VisitResumeGridDisplay">
+    <VerticalStackLayout>
+
+        <ListView x:Name="ListViewGridDisplay" IsVisible="True" />
+
+        <!--<HorizontalStackLayout IsVisible="True" >
+            <ActivityIndicator x:Name="IndicatorGridDisplay" IsRunning="True"></ActivityIndicator>
+            <Label Text="Carregando..."></Label>
+        </HorizontalStackLayout>
+        <CollectionView x:Name="ListViewGridDisplay" IsEnabled="False" SelectionMode="None" Margin="0,0,0,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding MetricName}"
+                                TextColor="{Binding LineColor}"
+                                FontSize="20" HorizontalTextAlignment="Start"
+                                VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="20"/>
+                        <Label Text="{Binding BrandName}"
+                                TextColor="{Binding LineColor}"
+                                FontSize="20" HorizontalTextAlignment="Start"
+                                VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="20"/>
+                        <Label Text="{Binding Score}"
+                                TextColor="{Binding LineColor}"
+                                FontSize="20" HorizontalTextAlignment="End"
+                                VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Padding="20"/>
+                        <Image Source="finish.png" Opacity="{Binding ImageOpacity}" HeightRequest="20" Margin="0,0,10,0"></Image>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+    </VerticalStackLayout>
+</ContentView>
+

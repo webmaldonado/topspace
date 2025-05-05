@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.VisitList"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             Title="Visits">
+
+    <VerticalStackLayout>
+
+        <SearchBar x:Name="txtSearch" Placeholder="Search items..." TextChanged="txtSearch_TextChanged" FontSize="20" />
+
+        <Grid  ColumnDefinitions="*, *" RowDefinitions="*">
+            <Border Grid.Row="0" Grid.Column="0" HeightRequest="800">
+
+                    <!-- EM PROGRESSO -->
+                    <ListView x:Name="lstInProgress" ItemsSource="{Binding ListVisitViewModel}" RowHeight="270" HasUnevenRows="False" SelectionMode="None">
+                        <ListView.Header>
+
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image Margin="200, 0, 0, 0" Source="in_progress.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" />
+                                <Label Text="Em Progresso" VerticalOptions="Center" FontSize="30" FontAttributes="Bold" FontFamily="Arial Black" TextColor="Orange" />
+                            </HorizontalStackLayout>
+
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame 
+                                           Padding="10"
+                                           CornerRadius="10"
+                                           HasShadow="True"
+                                           Margin="20"
+                                           BorderColor="LightGray">
+
+                                        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0" ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                                            <Label Text="{Binding Name}" FontSize="30" FontFamily="Arial Black" TextColor="{StaticResource Primary}" Padding="0" FontAttributes="Bold" Grid.ColumnSpan="2" Grid.Row="0" LineBreakMode="NoWrap" MaxLines="1"></Label>
+                                            <Label Text="{Binding POSCode}" TextColor="Black" Grid.Column="0" Grid.Row="1" Padding="0"></Label>
+                                            <Label Text="{Binding TagBaseName}" TextColor="Black" Grid.Column="0" Grid.Row="2" Padding="0"></Label>
+                                            <Label Text="{Binding Address}" TextColor="Black" Padding="0" Grid.Column="0" Grid.Row="3"></Label>
+                                            <Label Text="{Binding City}" TextColor="Black" Grid.Column="0" Grid.Row="4" Padding="0"></Label>
+                                            <Label Grid.Column="0" Grid.Row="5" Padding="0" TextColor="Green" FontSize="20" FontAttributes="Bold" FontFamily="Arial Black">
+                                                <Label.Text>
+                                                    <MultiBinding StringFormat="Visitas no mes: {0} / {1}">
+                                                        <Binding Path="VisitCount" />
+                                                        <Binding Path="Category" />
+                                                    </MultiBinding>
+                                                </Label.Text>
+                                            </Label>
+                                            <VerticalStackLayout Grid.Column="1" Grid.RowSpan="6" Padding="0,0,0,0" HorizontalOptions="End">
+                                                <Button x:Name="btnCheckIn" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnCheckIn_Clicked" CommandParameter="{Binding POSCode}" Text="Lançar" FontSize="16" WidthRequest="200" HeightRequest="50" Margin="0,50,0,10"></Button>
+                                                <HorizontalStackLayout>
+                                                    <Border Stroke="Transparent" BackgroundColor="LightBlue" StrokeShape="RoundRectangle 5,5,5,5" Padding="5" Margin="0,0,0,0" WidthRequest="110">
+                                                        <Label Text="{Binding PreviousScoreAVG}" TextColor="Black"></Label>
+                                                    </Border>
+                                                    <Border Stroke="Transparent" BackgroundColor="LightGreen" StrokeShape="RoundRectangle 5,5,5,5" Padding="5,5,5,5" WidthRequest="90">
+                                                        <Label Text="{Binding CurrentScoreAVG}" TextColor="Black"></Label>
+                                                    </Border>
+                                                </HorizontalStackLayout>
+                                            </VerticalStackLayout>
+                                            
+                                            <HorizontalStackLayout HorizontalOptions="Start" Grid.ColumnSpan="2" Grid.Row="6" Margin="0,10,0,0">
+                                                
+                                                <CollectionView HeightRequest="30" VerticalOptions="Center" ItemsLayout="HorizontalList" ItemsSource="{Binding VisitHistory}">
+                                                    <CollectionView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Border BackgroundColor="#efeff1" Padding="5">
+                                                                <HorizontalStackLayout VerticalOptions="Center">
+                                                                    <Image Source="calendar.png" WidthRequest="15" HeightRequest="15" Margin="5,0,5,0"></Image>
+                                                                    <Label Text="{Binding VisitDate}" TextColor="Black" FontSize="12"></Label>
+                                                                    <Image Source="speed.png" WidthRequest="15" HeightRequest="15" Margin="10,0,5,0"></Image>
+                                                                    <Label Text="{Binding Score}" TextColor="Black" FontSize="12"></Label>
+                                                                </HorizontalStackLayout>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </CollectionView.ItemTemplate>
+                                                </CollectionView>
+                                                
+                                            </HorizontalStackLayout>
+                                        </Grid>
+
+                                    </Frame>
+
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" HeightRequest="800">
+
+                    <!-- FINALIZADOS -->
+                    <ListView x:Name="lstFinished" ItemsSource="{Binding ListVisitViewModel}" RowHeight="270" SelectionMode="None" HasUnevenRows="False">
+                        <ListView.Header>
+
+                            <HorizontalStackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Image Margin="200, 0, 0, 0" Source="finish.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center" />
+                                <Label Text="Finalizados" VerticalOptions="Center" FontSize="30" FontAttributes="Bold" FontFamily="Arial Black" TextColor="Green" />
+                            </HorizontalStackLayout>
+
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame BackgroundColor="#e5eae5"
+                                           Padding="10"
+                                           CornerRadius="10"
+                                           HasShadow="True"
+                                           Margin="20"
+                                           BorderColor="LightGray">
+
+                                        <Grid Padding="0" RowSpacing="0" ColumnSpacing="0" ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto">
+                                            <Label Text="{Binding Name}" FontSize="30" FontFamily="Arial Black" TextColor="{StaticResource Primary}" Padding="0" FontAttributes="Bold" Grid.ColumnSpan="2" Grid.Row="0" LineBreakMode="NoWrap" MaxLines="1"></Label>
+                                            <Label Text="{Binding POSCode}" TextColor="Black" Grid.Column="0" Grid.Row="1" Padding="0"></Label>
+                                            <Label Text="{Binding TagBaseName}" TextColor="Black" Grid.Column="0" Grid.Row="2" Padding="0"></Label>
+                                            <Label Text="{Binding Address}" TextColor="Black" Padding="0" Grid.Column="0" Grid.Row="3"></Label>
+                                            <Label Text="{Binding City}" TextColor="Black" Grid.Column="0" Grid.Row="4" Padding="0"></Label>
+                                            <Label Grid.Column="0" Grid.Row="5" Padding="0" TextColor="Green" FontSize="20" FontAttributes="Bold" FontFamily="Arial Black">
+                                                <Label.Text>
+                                                    <MultiBinding StringFormat="Visitas no mes: {0} / {1}">
+                                                        <Binding Path="VisitCount" />
+                                                        <Binding Path="Category" />
+                                                    </MultiBinding>
+                                                </Label.Text>
+                                            </Label>
+                                            <VerticalStackLayout Grid.Column="1" Grid.RowSpan="6" HorizontalOptions="End">
+                                                <Button Text="Lançar" FontSize="20" CommandParameter="{Binding POSCode}"  WidthRequest="200" IsEnabled="False" HeightRequest="50" Clicked="btnCheckIn_Clicked" Margin="0,50,0,10"></Button>
+                                                    <HorizontalStackLayout>
+                                                        <Border Stroke="Transparent" BackgroundColor="LightBlue" StrokeShape="RoundRectangle 5,5,5,5" Padding="5" Margin="0,0,0,0" WidthRequest="110">
+                                                            <Label Text="{Binding PreviousScoreAVG}" TextColor="Black"></Label>
+                                                        </Border>
+                                                        <Border Stroke="Transparent" BackgroundColor="LightGreen" StrokeShape="RoundRectangle 5,5,5,5" Padding="5,5,5,5" WidthRequest="90">
+                                                            <Label Text="{Binding CurrentScoreAVG}" TextColor="Black"></Label>
+                                                        </Border>
+                                                    </HorizontalStackLayout>
+                                            </VerticalStackLayout>
+
+                                            <HorizontalStackLayout HorizontalOptions="Start" Grid.ColumnSpan="2" Grid.Row="6" Margin="0,10,0,0">
+                                                
+                                                <CollectionView HeightRequest="30" VerticalOptions="Center" ItemsLayout="HorizontalList" ItemsSource="{Binding VisitHistory}">
+                                                    <CollectionView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Border BackgroundColor="#efeff1" Padding="5">
+                                                                <HorizontalStackLayout VerticalOptions="Center">
+                                                                    <Image Source="calendar.png" WidthRequest="15" HeightRequest="15" Margin="5,0,5,0"></Image>
+                                                                    <Label Text="{Binding VisitDate}" TextColor="Black" FontSize="12"></Label>
+                                                                    <Image Source="speed.png" WidthRequest="15" HeightRequest="15" Margin="10,0,5,0"></Image>
+                                                                    <Label Text="{Binding Score}" TextColor="Black" FontSize="12"></Label>
+                                                                </HorizontalStackLayout>
+                                                            </Border>
+                                                        </DataTemplate>
+                                                    </CollectionView.ItemTemplate>
+                                                </CollectionView>
+                                                
+                                            </HorizontalStackLayout>
+                                        </Grid>
+
+                                    </Frame>
+
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+            </Border>
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

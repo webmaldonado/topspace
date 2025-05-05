@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TopSpaceMAUI.ViewModel"
+             x:Class="TopSpaceMAUI.SyncBeta"
+             Title="Sincronização - BETA">
+
+
+    <StackLayout Padding="10">
+
+        <Button Text="Sincronizar" Command="{Binding SincronizarTabelasCommand}" />
+
+        <CollectionView ItemsSource="{Binding TabelasParaSincronizar}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding Nome}" VerticalOptions="Center" />
+                        <ProgressBar WidthRequest="800" Progress="{Binding PorcentagemConcluida}" ProgressColor="Orange" />
+                        <Label Text="{Binding PorcentagemConcluida, StringFormat='{0}%'}" 
+                               VerticalOptions="Center" 
+                               Margin="5,0,0,0" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

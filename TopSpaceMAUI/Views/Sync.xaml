@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.Sync"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             Title="Sync">
+
+        <!--xmlns:res="clr-namespace:TopSpaceMAUI.Properties"
+        xmlns:TitleView="clr-namespace:TopSpaceMAUI"-->
+
+        <!--<Shell.TitleView>
+            <TitleView:Title></TitleView:Title>        
+        </Shell.TitleView>-->
+
+        <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*" RowSpacing="20" Padding="10">
+            <ProgressBar x:Name="pgvSync" IsVisible="False" Progress="40" HeightRequest="40" Grid.Row="0" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Grid.Row="1">
+                <Image Source="sync_info.png" VerticalOptions="Start" HeightRequest="150"></Image>
+                <VerticalStackLayout Padding="20,0,0,0">
+                    <Label Text="Sincronização de Informações" FontAttributes="Bold" FontFamily="Arial Black" FontSize="30"></Label>
+                    <Label
+                        WidthRequest="600"
+                        HeightRequest="100"
+                        LineBreakMode="WordWrap"
+                        Text="A funcionalidade de sincronização permite atualizar e integrar as informações do seu tablet com o sistema administrativo de forma rápida e eficiente. Com ela, todos os dados coletados no campo são automaticamente transferidos para o sistema principal, garantindo que as informações estejam sempre atualizadas e acessíveis para a equipe."></Label>
+
+                    <Border 
+                        HorizontalOptions="Start"
+                        Padding="16,8"
+                        Stroke="Gray"
+                        Background="WhiteSmoke"
+                        StrokeThickness="1">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10,10,10,10"/>
+                        </Border.StrokeShape>
+                        <Label x:Name="lblEnvInfo" TextColor="Black" Text=""></Label>
+                    </Border>
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="btnSendLog"
+                                Margin="10,20,0,0"
+                                Text="Enviar Log"
+                                WidthRequest="240"
+                                HeightRequest="70"
+                                Clicked="BtnSendLog_Clicked" 
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                BackgroundColor="Orange"
+                                IsEnabled="False"
+                                CornerRadius="10" IsVisible="False">
+                        </Button>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnSync"
+                Margin="0,0,0,0"
+                Text="Sincronizar Agora !!"
+                WidthRequest="240"
+                HeightRequest="70"
+                Clicked="BtnSync_Clicked" 
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                FontSize="20"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"
+                CornerRadius="10" Grid.Row="2" />
+            <Image x:Name="imgAnimation" IsVisible="False" Grid.Row="2" HeightRequest="60" WidthRequest="60" Source="sync_animated.png"></Image>
+
+            <VerticalStackLayout Grid.Row="3">
+                <Border 
+                    HorizontalOptions="CenterAndExpand"
+                    Padding="16,8"
+                    Stroke="Gray"
+                    StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5,5,5,5"/>
+                    </Border.StrokeShape>
+
+                    <CollectionView x:Name="logList" ItemsSource="{Binding Model.SyncLog}" HeightRequest="250" MaximumHeightRequest="250">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding Message}" WidthRequest="420" />
+                                    <Label Text="{Binding Detail}" WidthRequest="100" />
+                                    <Image Source="{Binding isErrorIcon}" WidthRequest="36" />
+                                </HorizontalStackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Border>
+            </VerticalStackLayout>
+
+
+        </Grid>
+
+</ContentPage>

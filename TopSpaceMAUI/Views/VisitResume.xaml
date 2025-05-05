@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.VisitResume"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             xmlns:controls="clr-namespace:TopSpaceMAUI.Components"
+             Title="VisitResume">
+
+<VerticalStackLayout>
+
+        <!-- QUALITY CHECK -->
+        <HorizontalStackLayout IsVisible="{Binding IsQualityCheckEnable}" Padding="10" BackgroundColor="{Binding QualityCheck.BackColor}">
+            <Border BackgroundColor="#f6f6f5" Stroke="#e6e5e2" StrokeThickness="2" HeightRequest="130" WidthRequest="150" Margin="0,0,20,0">
+                <Image Aspect="AspectFill" Source="{Binding QualityCheck.Photo}" HeightRequest="130" WidthRequest="150" HorizontalOptions="Start" />
+            </Border>
+            <VerticalStackLayout Padding="0, 0">
+                <Label Text="Quality Check" FontFamily="Verdana" TextColor="Black" FontSize="15"></Label>
+                <Label Text="{Binding QualityCheck.BrandName}" TextColor="Black" FontFamily="Verdana" FontAttributes="Bold" FontSize="20"></Label>
+                <Label Text="{Binding QualityCheck.Name}" TextColor="Black" FontFamily="Verdana" FontAttributes="Bold" FontSize="15"></Label>
+                <HorizontalStackLayout Margin="0,20,0,0">
+                    <Button 
+                        Text="Adicionar"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding QualityCheck.OpenCameraCommand}"></Button>
+                    <Button 
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            Text="Remover"
+                            Margin="10,0,0,0"
+                            Command="{Binding QualityCheck.ClearPhotoCommand}"></Button>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <Grid  ColumnDefinitions="*, *" RowDefinitions="*">
+            <Border Grid.Row="0" Grid.Column="0" HeightRequest="850">
+                <!-- PONTUACAO BLP -->
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Pontuação BLP" VerticalOptions="Center" FontSize="30" FontAttributes="Bold" FontFamily="Arial Black" TextColor="{StaticResource Primary}" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center" Margin="0,50,0,0">
+                        <Label Text="{Binding LabelScore}" FontSize="55" FontFamily="Arial Black" FontAttributes="Bold" VerticalTextAlignment="End" TextColor="{Binding LabelScoreColor}"></Label>
+                        <Label Text="/" FontSize="50" VerticalTextAlignment="Center" FontFamily="Arial Black" TextColor="Gray"></Label>
+                        <Label Text="100" FontSize="55" VerticalTextAlignment="End"  FontFamily="Arial Black" TextColor="Gray"></Label>
+                        <Label Text="{Binding LabelScoreName}" VerticalTextAlignment="End" FontSize="55" FontFamily="Arial Black" FontAttributes="Bold" TextColor="{Binding LabelScoreColor}" Margin="50,0,0,0"></Label>
+                    </HorizontalStackLayout>
+
+                    <Slider x:Name="sldScore" IsEnabled="False" Minimum="0" Maximum="100" WidthRequest="500" Value="{Binding SliderValue}" Margin="0,20" ValueChanged="Slider_ValueChanged"></Slider>
+
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <VerticalStackLayout Padding="15">
+                            <Label Text="Share de Gôndola" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FontFamily="Arial" TextColor="{StaticResource Primary}"></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding MyScoreMetricShelf}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="/" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="{Binding ScoreMaxMetricShelf}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Padding="15">
+                            <Label Text="Distribuição" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FontFamily="Arial" TextColor="{StaticResource Primary}"></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding MyScoreMetricStock}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="/" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="{Binding ScoreMaxMetricStock}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Padding="15">
+                            <Label Text="Merchandising" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FontFamily="Arial" TextColor="{StaticResource Primary}"></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding MyScoreMetricDisplay}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="/" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="{Binding ScoreMaxMetricDisplay}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Padding="15">
+                            <Label Text="Treinamentos" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FontFamily="Arial" TextColor="{StaticResource Primary}"></Label>
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding MyScoreMetricAction}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="/" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                                <Label Text="{Binding ScoreMaxMetricAction}" HorizontalTextAlignment="Center" FontSize="30"></Label>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <ScrollView HeightRequest="500">
+                        <VerticalStackLayout>
+
+                             <!--SHELF--> 
+                            <Label Text="Share de Gôndola" FontFamily="Verdana" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="30" Margin="10"></Label>
+                            <controls:VisitResumeGridShelf></controls:VisitResumeGridShelf>
+
+                             <!--STOCK--> 
+                            <Label Text="Distribuição" FontFamily="Verdana" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="30" Margin="10"></Label>
+                            <controls:VisitResumeGridStock></controls:VisitResumeGridStock>
+
+                             <!--DISPLAY--> 
+                            <Label Text="Merchandising" FontFamily="Verdana" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="30" Margin="10"></Label>
+                            <controls:VisitResumeGridDisplay></controls:VisitResumeGridDisplay>
+
+                             <!--ACTION--> 
+                            <Label Text="Treinamentos" FontFamily="Verdana" FontAttributes="Bold" TextColor="{StaticResource Primary}" FontSize="30" Margin="10"></Label>
+                            <controls:VisitResumeGridAction></controls:VisitResumeGridAction>
+
+                        </VerticalStackLayout>
+                    </ScrollView>
+
+                </VerticalStackLayout>
+
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" HeightRequest="850">
+
+                <!-- OBJETIVOS -->
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label Text="Objetivos" VerticalOptions="Center" FontSize="30" FontAttributes="Bold" FontFamily="Arial Black" TextColor="{StaticResource Primary}" />
+                    </HorizontalStackLayout>
+                    <ListView ItemsSource="{Binding VisitResumeObjectivesViewModels}" HasUnevenRows="False" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding BrandName}" 
+                                               FontSize="20" HorizontalTextAlignment="Start"
+                                               VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Padding="10"/>
+                                        <Label Text="{Binding Warnning}" 
+                                               FontSize="20" HorizontalTextAlignment="End"
+                                               VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Padding="20"/>
+                                        <!--<ImageButton Opacity="{Binding ImageOpacity}" Source="edit.png"></ImageButton>-->
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                    <HorizontalStackLayout Margin="10,20,0,0" HorizontalOptions="CenterAndExpand">
+                        <Button x:Name="btnVisitCancel" Clicked="btnVisitCancel_Clicked" Text="Cancelar Visita" FontSize="20" HeightRequest="50"  BackgroundColor="Red" TextColor="White"></Button>
+                        <Button x:Name="btnVisitContinue" Clicked="btnVisitContinue_Clicked" Text="Continuar Visita" FontSize="20" HeightRequest="50"  Margin="10,0,0,0" BackgroundColor="Green" TextColor="White"></Button>
+                        <Button x:Name="btnVisitFinish" Clicked="btnVisitFinish_Clicked" Text="Lancar Visita" FontSize="20" HeightRequest="50" Margin="10,0,0,0" BackgroundColor="{StaticResource Primary}" TextColor="White"></Button>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+
+            </Border>
+        </Grid>
+
+    </VerticalStackLayout>
+
+
+
+</ContentPage>

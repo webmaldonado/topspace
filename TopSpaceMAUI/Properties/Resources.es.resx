@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Top Space</value>
+  </data>
+  <data name="DeviceHasNoCameraAlert" xml:space="preserve">
+    <value>Não há câmera disponível</value>
+  </data>
+  <data name="SendLogButtonLabel" xml:space="preserve">
+    <value>Enviar log</value>
+  </data>
+  <data name="SyncButtonLabel" xml:space="preserve">
+    <value>Sincronizar</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>1.0</value>
+  </data>
+	<data name="ApplicationState" xml:space="preserve"><value>Estado: {0};</value></data>
+	<data name="BackPictureMessage" xml:space="preserve"><value>¿Quieres guardar la foto antes de regresar?;</value></data>
+	<data name="BackPictureNegativeButton" xml:space="preserve"><value>no;</value></data>
+	<data name="BackPicturePositiveButton" xml:space="preserve"><value>Sí;</value></data>
+	<data name="BackPictureTitle" xml:space="preserve"><value>Guardar Fotografía?;</value></data>
+	<data name="BCO_IMG" xml:space="preserve"><value>Banco de Imagens;</value></data>
+	<data name="Cancel" xml:space="preserve"><value>Cancelar;</value></data>
+	<data name="CancelVisitMessage" xml:space="preserve"><value>Si cancela la visita se perderá toda la información no guardada.;</value></data>
+	<data name="CancelVisitNegativeButton" xml:space="preserve"><value>Volver;</value></data>
+	<data name="CancelVisitPositiveButton" xml:space="preserve"><value>Cancelar Visita;</value></data>
+	<data name="CancelVisitTitle" xml:space="preserve"><value>Cancelar Visita?;</value></data>
+	<data name="CleanDirectoryStage" xml:space="preserve"><value>: Limpeza de diretórios;</value></data>
+	<data name="CleanDirectoryStageDeleteSucess" xml:space="preserve"><value>: Diretório '{0}' removido com sucesso;</value></data>
+	<data name="CleanDirectoryStageFail" xml:space="preserve"><value>: Ocorreu um problema ao realizar a limpeza.;</value></data>
+	<data name="CleanDirectoryStageFinish" xml:space="preserve"><value>: Término da limpeza de diretórios;</value></data>
+	<data name="CleanDirectoryStageFinishDirectory" xml:space="preserve"><value>: Finalizada análise do diretório '{0}';</value></data>
+	<data name="CleanDirectoryStageStart" xml:space="preserve"><value>: Início;</value></data>
+	<data name="CleanDirectoryStageStartDirectory" xml:space="preserve"><value>: Iniciando análise do diretório '{0}';</value></data>
+	<data name="CorrectCategoryPhotoFail" xml:space="preserve"><value>: Error intentando corregir categoría de foto: {0};</value></data>
+	<data name="CorrectCategoryPhotoQualityCheckFail" xml:space="preserve"><value>: Error intentando corregir categoría de foto: {0};</value></data>
+	<data name="DateAndTime" xml:space="preserve"><value>Data/hora: {0};</value></data>
+	<data name="DeviceHasNoCameraAlert" xml:space="preserve"><value>El dispositivo no tiene cámara.;</value></data>
+	<data name="DeviceHasNoPermissionCameraAlert" xml:space="preserve"><value>O aplicativo não possui autorização para acessar a câmera, verifique as configurações de privacidade.;</value></data>
+	<data name="DownloadData" xml:space="preserve"><value>Descarga de datos {0};</value></data>
+	<data name="DownloadDataFail" xml:space="preserve"><value>: Falla en la descarga: {0};</value></data>
+	<data name="DownloadDataFailUnauthorized" xml:space="preserve"><value>: Error en la descarga: sin autorización;</value></data>
+	<data name="DownloadDataFinished" xml:space="preserve"><value>: Descarga completa (estado: {0}, código: {1}; registros: {2});</value></data>
+	<data name="DownloadDataStart" xml:space="preserve"><value>: Empezando descarga de datos;</value></data>
+	<data name="DownloadTimeFail" xml:space="preserve"><value>Descargar: {0};</value></data>
+	<data name="DownloadTimeFinished" xml:space="preserve"><value>Descarga completa (estado: {0}, código: {1});</value></data>
+	<data name="DownloadTimeUTC" xml:space="preserve"><value>: Descargando la hora en el servidor;</value></data>
+	<data name="DownloadTimeUTCStart" xml:space="preserve"><value>Comenzando descarga hora del servidor;</value></data>
+	<data name="EmailImgLibSubject" xml:space="preserve"><value>Top Space: Banco de Imagens;</value></data>
+	<data name="EmailImgLibTitle" xml:space="preserve"><value><b>Prezado(a)</b>,<br/><br/>Conforme solicitado, segue abaixo a relação de imagens para você usar em seu material promocional. Faça o download clicando no botão abaixo das imagens desejadas. <br/><br/><b>Muito obrigado e boas vendas!</b>;</value></data>
+	<data name="EmailLogAppVersion" xml:space="preserve"><value>Versión de la aplicación: ;</value></data>
+	<data name="EmailLogBackgroundRefresh" xml:space="preserve"><value>Actualización del Fondo: ;</value></data>
+	<data name="EmailLogBRDisabled" xml:space="preserve"><value>Indisponible;</value></data>
+	<data name="EmailLogBREnabled" xml:space="preserve"><value>Disponible;</value></data>
+	<data name="EmailLogCameraAccess" xml:space="preserve"><value>Acesso à câmera: ;</value></data>
+	<data name="EmailLogComments" xml:space="preserve"><value>Comentario: ;</value></data>
+	<data name="EmailLogCrashesSubject" xml:space="preserve"><value>Top Space: Registro de errores;</value></data>
+	<data name="EmailLogCrashesTitle" xml:space="preserve"><value>Registro de Errores;</value></data>
+	<data name="EmailLogCreationDate" xml:space="preserve"><value>Fecha / hora: ;</value></data>
+	<data name="EmailLogCurrentScreen" xml:space="preserve"><value>Pantalla actual: ;</value></data>
+	<data name="EmailLogCurrentScreenFail" xml:space="preserve"><value>No fue posible identificar la pantalla actual;</value></data>
+	<data name="EmailLogCurrentScreenNoInfo" xml:space="preserve"><value>Ninguna información sobre la pantalla actual;</value></data>
+	<data name="EmailLogDateFormat" xml:space="preserve"><value>dd/MM/yyyy hh:mm:ss tt;</value></data>
+	<data name="EmailLogDescription" xml:space="preserve"><value>Descripción: ;</value></data>
+	<data name="EmailLogDetails" xml:space="preserve"><value>Detalle: ;</value></data>
+	<data name="EmailLogDeviceInfo" xml:space="preserve"><value>Información del Dispositivo;</value></data>
+	<data name="EmailLogDeviceModel" xml:space="preserve"><value>Modelo: ;</value></data>
+	<data name="EmailLogFinishedAt" xml:space="preserve"><value>Finalizado em: {0};</value></data>
+	<data name="EmailLogGeneratedAt" xml:space="preserve"><value>Generado en: {0} (UTC);</value></data>
+	<data name="EmailLogInternetConnectionStatus" xml:space="preserve"><value>Conexão de Internet: ;</value></data>
+	<data name="EmailLogLanguage" xml:space="preserve"><value>Idioma: ;</value></data>
+	<data name="EmailLogLocationServices" xml:space="preserve"><value>Servicio de Localización: ;</value></data>
+	<data name="EmailLogLogID" xml:space="preserve"><value>LOGID: ;</value></data>
+	<data name="EmailLogLSDisabled" xml:space="preserve"><value>Inactivo;</value></data>
+	<data name="EmailLogLSEnabled" xml:space="preserve"><value>Activo;</value></data>
+	<data name="EmailLogServerName" xml:space="preserve"><value>Servidor: ;</value></data>
+	<data name="EmailLogSOVersion" xml:space="preserve"><value>Versión del Sistema Operativo: ;</value></data>
+	<data name="EmailLogStartedAt" xml:space="preserve"><value>Iniciado em: {0};</value></data>
+	<data name="EmailLogSyncSubject" xml:space="preserve"><value>Top Space: Registro de Sincronización;</value></data>
+	<data name="EmailLogSyncTitle" xml:space="preserve"><value>Registro de Sincronización;</value></data>
+	<data name="EmailLogUserInfo" xml:space="preserve"><value>Información del Usuario;</value></data>
+	<data name="EmailLogUsername" xml:space="preserve"><value>Usuario: ;</value></data>
+	<data name="EntityBrand" xml:space="preserve"><value>Marca;</value></data>
+	<data name="EntityFileDepot" xml:space="preserve"><value>Dados dos arquivos;</value></data>
+	<data name="EntityImgLib" xml:space="preserve"><value>Banco de Imagens;</value></data>
+	<data name="EntityLastVisit" xml:space="preserve"><value>Ultimas visitas;</value></data>
+	<data name="EntityLastVisitDataTrackPrice" xml:space="preserve"><value>Dados das últimas pesquisas de preço;</value></data>
+	<data name="EntityLog" xml:space="preserve"><value>Log;</value></data>
+	<data name="EntityLPGrade" xml:space="preserve"><value>Critérios para classificação final da visita;</value></data>
+	<data name="EntityLPMetricType" xml:space="preserve"><value>Pesos para classificação final da visita;</value></data>
+	<data name="EntityLPScoreBrand" xml:space="preserve"><value>Pontuação das métricas de marca;</value></data>
+	<data name="EntityLPScoreSKU" xml:space="preserve"><value>Pontuação das métricas de produto;</value></data>
+	<data name="EntityMetric" xml:space="preserve"><value>Métrica;</value></data>
+	<data name="EntityMetricType" xml:space="preserve"><value>Tipo Métrico;</value></data>
+	<data name="EntityNews" xml:space="preserve"><value>News;</value></data>
+	<data name="EntityObjectiveBrand" xml:space="preserve"><value>Objectivo de la marca;</value></data>
+	<data name="EntityObjectiveSKU" xml:space="preserve"><value>Objectivo del producto;</value></data>
+	<data name="EntityPOS" xml:space="preserve"><value>Punto de Venta;</value></data>
+	<data name="EntityPOSGps" xml:space="preserve"><value>POSGps;</value></data>
+	<data name="EntityPOSMaterial" xml:space="preserve"><value>Material PDV;</value></data>
+	<data name="EntityPOSMaterialUpload" xml:space="preserve"><value>: Upload dos dados de material PDV;</value></data>
+	<data name="EntityPromotion" xml:space="preserve"><value>Promotion;</value></data>
+	<data name="EntityPromotionPOS" xml:space="preserve"><value>PromotionPOS;</value></data>
+	<data name="EntityQuiz" xml:space="preserve"><value>Quiz;</value></data>
+	<data name="EntityQuizAnswer" xml:space="preserve"><value>Quiz Answer;</value></data>
+	<data name="EntityQuizOption" xml:space="preserve"><value>Quiz Option;</value></data>
+	<data name="EntityQuizPOS" xml:space="preserve"><value>Quiz POS;</value></data>
+	<data name="EntityQuizType" xml:space="preserve"><value>Quiz Type;</value></data>
+	<data name="EntitySKU" xml:space="preserve"><value>Producto;</value></data>
+	<data name="EntitySKUCompetitor" xml:space="preserve"><value>Produtos concorrentes;</value></data>
+	<data name="EntityTag" xml:space="preserve"><value>Tag;</value></data>
+	<data name="EntityTagBrandPontoNatural" xml:space="preserve"><value>Tag Brand Ponto Natural;</value></data>
+	<data name="EntityTagMerchandisingAcao" xml:space="preserve"><value>Tag Merchandising Acao;</value></data>
+	<data name="EntityTagPresenca" xml:space="preserve"><value>Tag Presenca;</value></data>
+	<data name="EntityTagType" xml:space="preserve"><value>Cluster;</value></data>
+	<data name="EntityVisitCount" xml:space="preserve"><value>Quantidade de visitas realizadas;</value></data>
+	<data name="EntityWhatsGoingOn" xml:space="preserve"><value>Boca no Trombone;</value></data>
+	<data name="ExecutionContextSelect" xml:space="preserve"><value>Selecione o motivo da não execução do objetivo de {0}.;</value></data>
+	<data name="FailSaveData" xml:space="preserve"><value>Error al grabar datos {0};</value></data>
+	<data name="Finish" xml:space="preserve"><value>concluído;</value></data>
+	<data name="FinishSync" xml:space="preserve"><value>Concluyendo sincronización;</value></data>
+	<data name="FinishSyncFail" xml:space="preserve"><value>Error al finalizar: {0};</value></data>
+	<data name="FinishSyncSucess" xml:space="preserve"><value>Sincronización finalizada (status: {0}, código: {1});</value></data>
+	<data name="GetDataToTemp" xml:space="preserve"><value>: Download dos dados;</value></data>
+	<data name="GiveUpPhotoFail" xml:space="preserve"><value>: Error al eliminar la foto espirada: {0};</value></data>
+	<data name="GiveUpPhotoQualityCheckFail" xml:space="preserve"><value>: Error al eliminar la foto quality check espirada: {0};</value></data>
+	<data name="ImgLibAllBrands" xml:space="preserve"><value>Todas as Marcas;</value></data>
+	<data name="ImgLibReceiveFilesFail" xml:space="preserve"><value>: Falha no download: sem autorização;</value></data>
+	<data name="ImgLibSelectedImagesPlural" xml:space="preserve"><value>{0} itens selecionados;</value></data>
+	<data name="ImgLibSelectedImagesSingular" xml:space="preserve"><value>{0} item selecionado;</value></data>
+	<data name="InsufficientTimeSaveData" xml:space="preserve"><value>Tiempo insuficiente para la operación de grabación ({0} s);</value></data>
+	<data name="LocalizationDisabledMessage" xml:space="preserve"><value>Habilite el servicio de ubicación del dispositivo, de manera que la aplicación pueda determinar su ubicación aproximada;</value></data>
+	<data name="LocalizationDisabledPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="LocalizationDisabledTitle" xml:space="preserve"><value>Servicios de localización desactivados;</value></data>
+	<data name="LoginEmpty" xml:space="preserve"><value>Introduzca usuario y contraseña;</value></data>
+	<data name="LoginError" xml:space="preserve"><value>Error de autenticación, por favor intente de nuevo más tarde. \n{0};</value></data>
+	<data name="LoginErrorConnectFailure" xml:space="preserve"><value>Não foi possível estabelecer uma conexão de dados com o servidor.;</value></data>
+	<data name="LoginErrorDescription" xml:space="preserve"><value>Erro: ;</value></data>
+	<data name="LoginErrorNameResolutionFailure" xml:space="preserve"><value>Não foi possível resolver o nome de domínio.;</value></data>
+	<data name="LoginErrorTimeout" xml:space="preserve"><value>Tempo limite da solicitação excedido, verifique a qualidade da sua conexão.;</value></data>
+	<data name="LoginFailed" xml:space="preserve"><value>Usuario y/o contraseña incorrectos.;</value></data>
+	<data name="LogInfoError" xml:space="preserve"><value>Error inesperado: {0};</value></data>
+	<data name="LogInfoOperationCanceled" xml:space="preserve"><value>Operación cancelada: {0};</value></data>
+	<data name="LoginUnauthorized" xml:space="preserve"><value>No fue posible iniciar sesión porque otro usuario esta registrado en el dispositivo, vuelva a instalar la aplicación y vuelva a intentarlo.;</value></data>
+	<data name="MAT_PDV" xml:space="preserve"><value>Material PDV;</value></data>
+	<data name="MATR" xml:space="preserve"><value>MATR: {0}s;</value></data>
+	<data name="MenuSidebarImageDatabase" xml:space="preserve"><value>Banco de Imagens;</value></data>
+	<data name="MenuSidebarLogout" xml:space="preserve"><value>Salir;</value></data>
+	<data name="MenuSidebarPortalTrade" xml:space="preserve"><value>News;</value></data>
+	<data name="MenuSidebarPOSMaterial" xml:space="preserve"><value>Material PDV;</value></data>
+	<data name="MenuSidebarSync" xml:space="preserve"><value>Sincronización;</value></data>
+	<data name="MenuSidebarVisit" xml:space="preserve"><value>Visitas;</value></data>
+	<data name="MenuSidebarWall" xml:space="preserve"><value>Faceline;</value></data>
+	<data name="MenuSidebarWhatsGoingOn" xml:space="preserve"><value>Boca no Trombone;</value></data>
+	<data name="MoveDataTempToProd" xml:space="preserve"><value>: Mover los registros de las tablas temporales para la producción;</value></data>
+	<data name="MoveDataTempToProdStage" xml:space="preserve"><value>Movendo os registros das tabelas temporárias para produção;</value></data>
+	<data name="MoveDataToUploadQueue" xml:space="preserve"><value>Mover los registros de la tabla visitas a la tabla de subida de fotos;</value></data>
+	<data name="MoveDataToUploadQueueFail" xml:space="preserve"><value>: Error al realizar la carga de la tabla fotos: {0};</value></data>
+	<data name="MoveDataToUploadQueueFinished" xml:space="preserve"><value>: Carga de la tabla de fotos completada ({0} filas insertadas);</value></data>
+	<data name="MoveDataToUploadQueueNoData" xml:space="preserve"><value>: Carga de la tabla de fotos completada (no hay registros para insertar);</value></data>
+	<data name="MoveDataToUploadQueueStart" xml:space="preserve"><value>: Cargando tabla de fotos;</value></data>
+	<data name="MoveFilesTempToProd" xml:space="preserve"><value>: Movendo os arquivos da pasta temporária para produção;</value></data>
+	<data name="MoveFilesToProdFail" xml:space="preserve"><value>: Falha no download: ;</value></data>
+	<data name="MoveFilesToProdFinish" xml:space="preserve"><value>: Concluída a mudança da pasta temporária para produção;</value></data>
+	<data name="MoveFilesToProdInsufficientTime" xml:space="preserve"><value>: Tempo insuficiente para apagar os arquivos ({0}s);</value></data>
+	<data name="MoveFilesToProdItem" xml:space="preserve"><value>: Excluindo o arquivo '{0}';</value></data>
+	<data name="MoveFilesToProdStart" xml:space="preserve"><value>: Iniciando a mudança da pasta temporária para produção;</value></data>
+	<data name="MoveFilesToProdSucess" xml:space="preserve"><value>Arquivo apagado com sucesso;</value></data>
+	<data name="NoItems" xml:space="preserve"><value>No hay registros;</value></data>
+	<data name="NoResults" xml:space="preserve"><value>No hay resultados;</value></data>
+	<data name="NoteObjectiveCount" xml:space="preserve"><value>: Grabación cantidad de objectivos;</value></data>
+	<data name="ObjectivesOK" xml:space="preserve"><value>OK;</value></data>
+	<data name="ObjectivesPending" xml:space="preserve"><value>{0} pendência(s);</value></data>
+	<data name="PendingExecutionContextMessage" xml:space="preserve"><value>Não é possível lançar a visita sem o preenchimento do(s) motivo(s) da não execução do(s) objetivo(s).;</value></data>
+	<data name="PictureHasNoRulerMessage" xml:space="preserve"><value>No hay reglas para guardar.;</value></data>
+	<data name="PictureHasNoRulerPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="PictureHasNoRulerTitle" xml:space="preserve"><value>Guardar Fotografía?;</value></data>
+	<data name="PictureSavedFailMessage" xml:space="preserve"><value>No se puede guardar la imagen.;</value></data>
+	<data name="PictureSavedMessage" xml:space="preserve"><value>Fotografía guardada correctamente.;</value></data>
+	<data name="PictureSavedPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="PictureSavedTitle" xml:space="preserve"><value>Fotografía guardada;</value></data>
+	<data name="POSMaterialDataStart" xml:space="preserve"><value>: Iniciando upload dos dados de material PDV;</value></data>
+	<data name="POSMaterialDataUploadStarted" xml:space="preserve"><value>Fazendo upload dos dados de Material PDV;</value></data>
+	<data name="POSMaterialEnterQuantity" xml:space="preserve"><value>digite a quantidade;</value></data>
+	<data name="POSMaterialNeededQuantity" xml:space="preserve"><value>necessário;</value></data>
+	<data name="POSMaterialNoActionMessage" xml:space="preserve"><value>Você pode solicitar materiais entre os dias {0} e {1} de cada mês.\nNo momento só está disponível consultar suas solicitações já feitas.;</value></data>
+	<data name="POSMaterialNoActionPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="POSMaterialNoActionTitle" xml:space="preserve"><value>Solicitações Encerradas;</value></data>
+	<data name="POSMaterialNoActionUpload" xml:space="preserve"><value>: Fora do período de upload dos dados de Material de Ponto de Venda Necessário;</value></data>
+	<data name="POSMaterialPrepareNeededDataUpload" xml:space="preserve"><value>: Preparando dados de Material de Ponto de Venda Necessário para upload;</value></data>
+	<data name="POSMaterialSavedMessage" xml:space="preserve"><value>Dados salvos com sucesso.;</value></data>
+	<data name="POSMaterialSavedPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="POSMaterialSavedTitle" xml:space="preserve"><value>Dados Salvos;</value></data>
+	<data name="POSMaterialUploadStage" xml:space="preserve"><value>: Upload de Material PDV;</value></data>
+	<data name="POSSetObjectivesCountEnd" xml:space="preserve"><value>Cálculo dos objetivos: {0} - Fim.;</value></data>
+	<data name="POSSetObjectivesCountStart" xml:space="preserve"><value>Cálculo dos objetivos - Início.;</value></data>
+	<data name="ReceiveFilesClientFail" xml:space="preserve"><value>Baixado {0} de {1} bytes;</value></data>
+	<data name="ReceiveFilesClientLength" xml:space="preserve"><value>Tamanho do arquivo baixado: {0} bytes;</value></data>
+	<data name="ReceiveFilesFail" xml:space="preserve"><value>: Falha no download: ;</value></data>
+	<data name="ReceiveFilesFailCheckMD5" xml:space="preserve"><value>: MD5 do arquivo não é válido;</value></data>
+	<data name="ReceiveFilesFailCreateFile" xml:space="preserve"><value>: Não foi possível criar o arquivo;</value></data>
+	<data name="ReceiveFilesFailNullFile" xml:space="preserve"><value>: Não foi possível realizar o download do arquivo '{0}' ({1} bytes);</value></data>
+	<data name="ReceiveFilesFinish" xml:space="preserve"><value>: Concluído o download dos arquivos;</value></data>
+	<data name="ReceiveFilesInsufficientTime" xml:space="preserve"><value>: Tempo insuficiente para recebimento dos arquivos ({0}s);</value></data>
+	<data name="ReceiveFilesItem" xml:space="preserve"><value>: Fazendo download do arquivo '{0}';</value></data>
+	<data name="ReceiveFilesMD5Client" xml:space="preserve"><value>: MD5 do arquivo baixado: {0};</value></data>
+	<data name="ReceiveFilesMD5Server" xml:space="preserve"><value>: MD5 do arquivo do servidor: {0};</value></data>
+	<data name="ReceiveFilesSavedLength" xml:space="preserve"><value>Tamanho do arquivo salvo: {0} bytes;</value></data>
+	<data name="ReceiveFilesServerLength" xml:space="preserve"><value>Tamanho do arquivo enviado pelo servidor: {0} bytes;</value></data>
+	<data name="ReceiveFilesStart" xml:space="preserve"><value>: Iniciando download dos arquivos;</value></data>
+	<data name="ReceiveFilesSucess" xml:space="preserve"><value>: Download do arquivo realizado com sucesso;</value></data>
+	<data name="ReceiveFilesToTemp" xml:space="preserve"><value>: Fazendo download dos arquivos para pasta temporária;</value></data>
+	<data name="RemoveOldDataFinish" xml:space="preserve"><value>: Finalizada remoção dos dados antigos de '{0}';</value></data>
+	<data name="RemoveOldDataStart" xml:space="preserve"><value>: Iniciando remoção dos dados antigos de '{0}';</value></data>
+	<data name="ResetDataDBFinish" xml:space="preserve"><value>: Finalizada remoção dos dados do banco de dados de '{0}';</value></data>
+	<data name="ResetDataDBStart" xml:space="preserve"><value>: Iniciando remoção dos dados do banco de dados de '{0}';</value></data>
+	<data name="ResetDataFilesFinish" xml:space="preserve"><value>: Finalizada remoção dos arquivos de '{0}';</value></data>
+	<data name="ResetDataFilesStart" xml:space="preserve"><value>: Iniciando remoção dos arquivos de '{0}';</value></data>
+	<data name="ResetDataFinish" xml:space="preserve"><value>: Finalizada remoção dos dados de '{0}';</value></data>
+	<data name="ResetDataStart" xml:space="preserve"><value>: Iniciando remoção dos dados de '{0}';</value></data>
+	<data name="RetakePhoto" xml:space="preserve"><value>Cambiar fotografía;</value></data>
+	<data name="SaveObjectiveCount" xml:space="preserve"><value>Guardando cantidad de objectivos por Punto de Venta;</value></data>
+	<data name="SaveProdDataDeleteCount" xml:space="preserve"><value>: Registros excluidos de la tabla: {0};</value></data>
+	<data name="SaveProdDataDeleteData" xml:space="preserve"><value>: Excluyendo tabla de datos innecesarios;</value></data>
+	<data name="SaveProdDataFail" xml:space="preserve"><value>: Error de sincronización en las tablas: {0};</value></data>
+	<data name="SaveProdDataFinished" xml:space="preserve"><value>: Sincronización completas ({0} objetos en la producción; {1} insertados; {2} actualizado; {3} excluido);</value></data>
+	<data name="SaveProdDataGet" xml:space="preserve"><value>: La recuperación de la información de la tabla;</value></data>
+	<data name="SaveProdDataInsert" xml:space="preserve"><value>: Inserción de registros en la tabla;</value></data>
+	<data name="SaveProdDataInsertCount" xml:space="preserve"><value>: Registros insertados en la tabla: {0};</value></data>
+	<data name="SaveProdDataInsertNew" xml:space="preserve"><value>: Insertar nuevos registros en la tabla;</value></data>
+	<data name="SaveProdDataInsertNewCount" xml:space="preserve"><value>: Registros insertados en la tabla: {0};</value></data>
+	<data name="SaveProdDataStart" xml:space="preserve"><value>: Inicio de la sincronización de las tablas;</value></data>
+	<data name="SaveProdDataSync" xml:space="preserve"><value>: Sincronización de registros de la tabla;</value></data>
+	<data name="SaveProdDataUpdate" xml:space="preserve"><value>: Actualización de los registros en la tabla;</value></data>
+	<data name="SaveProdDataUpdateCount" xml:space="preserve"><value>: Registros actualizados en la tabla: {0};</value></data>
+	<data name="SaveTempDataConfirm" xml:space="preserve"><value>: Confirmación de transacciones en la tabla temporal;</value></data>
+	<data name="SaveTempDataDeleteTable" xml:space="preserve"><value>: Excluyendo tabla temporal;</value></data>
+	<data name="SaveTempDataFail" xml:space="preserve"><value>: Error al cargar la tabla temporal: {0};</value></data>
+	<data name="SaveTempDataFinished" xml:space="preserve"><value>: Carga completa de la tabla temporal;</value></data>
+	<data name="SaveTempDataGet" xml:space="preserve"><value>: Recuperando información de tabla temporal;</value></data>
+	<data name="SaveTempDataInsert" xml:space="preserve"><value>: Inserción de registros en la tabla temporal;</value></data>
+	<data name="SaveTempDataInsertCount" xml:space="preserve"><value>: Documentos insertados en la tabla temporal: {0};</value></data>
+	<data name="SaveTempDataRecreateTable" xml:space="preserve"><value>: Creación de nueva tabla temporal;</value></data>
+	<data name="SaveTempDataStart" xml:space="preserve"><value>: Cargando tabla temporal;</value></data>
+	<data name="ScoreAction" xml:space="preserve"><value>Detailing;</value></data>
+	<data name="ScoreDisplay" xml:space="preserve"><value>Display;</value></data>
+	<data name="ScoreShelf" xml:space="preserve"><value>Share de Gôndola;</value></data>
+	<data name="ScoreStock" xml:space="preserve"><value>Distribuição;</value></data>
+	<data name="SelectPhotoFail" xml:space="preserve"><value>: Error al seleccionar la foto: {0};</value></data>
+	<data name="SelectPhotoQualityCheckFail" xml:space="preserve"><value>: Error al seleccionar la foto quality check: {0};</value></data>
+	<data name="SendLogErrorMessage" xml:space="preserve"><value>No se pudo enviar el correo eletrónico;</value></data>
+	<data name="SendLogErrorPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="SendLogErrorTitle" xml:space="preserve"><value>Error al enviar el correo eletrónico;</value></data>
+	<data name="SendLogSucessMessage" xml:space="preserve"><value>Correo electrónico enviado con éxito!;</value></data>
+	<data name="SendLogSucessPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="SendLogSucessTitle" xml:space="preserve"><value>Correo electrónico enviado;</value></data>
+	<data name="Shelf" xml:space="preserve"><value>Punto Natural;</value></data>
+	<data name="StageDownloadTimeUTC" xml:space="preserve"><value>Hora del servidor: ;</value></data>
+	<data name="StageImgLib" xml:space="preserve"><value>Banco de Imagens;</value></data>
+	<data name="StagePOSMaterialData" xml:space="preserve"><value>Material PDV;</value></data>
+	<data name="StageSync" xml:space="preserve"><value>Sincronización: ;</value></data>
+	<data name="StageVisitData" xml:space="preserve"><value>Visitas;</value></data>
+	<data name="StageVisitPhoto" xml:space="preserve"><value>Fotos de Visitas;</value></data>
+	<data name="StageVisitPhotoQualityCheck" xml:space="preserve"><value>Fotos de Visitas;</value></data>
+	<data name="Start" xml:space="preserve"><value>iniciado;</value></data>
+	<data name="StartSync" xml:space="preserve"><value>Inicio de la sincronización;</value></data>
+	<data name="StartSyncFail" xml:space="preserve"><value>Error de inicialización: {0};</value></data>
+	<data name="StartSyncSucess" xml:space="preserve"><value>Sincronización iniciada (estado: {0}, código: {1});</value></data>
+	<data name="SyncConnectionError" xml:space="preserve"><value>Se ha producido un problema de comunicación con el servidor. Compruebe si su conexión está activa y en buena calidad / velocidad. ;</value></data>
+	<data name="Synced" xml:space="preserve"><value>Sincronizada;</value></data>
+	<data name="SyncErrorDateTimeInaccurate" xml:space="preserve"><value>A data e/ou hora do seu dispositivo está imprecisa, verifique as configurações de Data e Hora e tente novamente.;</value></data>
+	<data name="SyncErrorDateTimeInaccurateLastServerDate" xml:space="preserve"><value>Última data/hora UTC recebida do servidor: {0};</value></data>
+	<data name="SyncErrorDateTimeInaccurateLocalDate" xml:space="preserve"><value>Data/hora do dispositivo: {0};</value></data>
+	<data name="SyncErrorDateTimeInaccurateLocalDateUTC" xml:space="preserve"><value>Data/hora UTC do dispositivo: {0};</value></data>
+	<data name="SyncFailMessage" xml:space="preserve"><value>La sincronización no se concluyó con éxito.;</value></data>
+	<data name="SyncFinished" xml:space="preserve"><value>Sincronización concluyó;</value></data>
+	<data name="SyncStarted" xml:space="preserve"><value>Sincronización empezado;</value></data>
+	<data name="SyncSucessMessage" xml:space="preserve"><value>Sincronización exitosa concluyó!;</value></data>
+	<data name="SyncSucessPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="SyncSucessTitle" xml:space="preserve"><value>Sincronización exitosa!;</value></data>
+	<data name="SyncUnexpectedErrorMessage" xml:space="preserve"><value>Error de sincronización inesperado. ;</value></data>
+	<data name="SyncUnexpectedErrorNegativeButton" xml:space="preserve"><value>Cancelar;</value></data>
+	<data name="SyncUnexpectedErrorOnOpenMessage" xml:space="preserve"><value>Se ha producido un error inesperado durante la última sincronización y el mismo no se completó correctamente.;</value></data>
+	<data name="SyncUnexpectedErrorOnOpenPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="SyncUnexpectedErrorPositiveButton" xml:space="preserve"><value>Reintente;</value></data>
+	<data name="SyncUnexpectedErrorTitle" xml:space="preserve"><value>Error de sincronización;</value></data>
+	<data name="TakePhoto" xml:space="preserve"><value>Añadir fotos;</value></data>
+	<data name="UnexpectedErrorMessage" xml:space="preserve"><value>Se ha producido un error inesperado durante la última ejecución de la aplicación, quieres un correo electrónico con los detalles del error?;</value></data>
+	<data name="UnexpectedErrorNegativeButton" xml:space="preserve"><value>No;</value></data>
+	<data name="UnexpectedErrorPositiveButton" xml:space="preserve"><value>Sí;</value></data>
+	<data name="UnexpectedErrorTitle" xml:space="preserve"><value>Error de ejecución;</value></data>
+	<data name="UpdateLastVisitData" xml:space="preserve"><value>Actualización de los datos de visitas anteriores;</value></data>
+	<data name="UploadLogData" xml:space="preserve"><value>Fazendo upload dos dados de log;</value></data>
+	<data name="UploadVisitData" xml:space="preserve"><value>Carga de datos de visitas;</value></data>
+	<data name="UploadVisitPhoto" xml:space="preserve"><value>Subir fotos de las visitas;</value></data>
+	<data name="UploadVisitPhotoQualityCheck" xml:space="preserve"><value>Subir fotos quality check de las visitas;</value></data>
+	<data name="ValueRupture" xml:space="preserve"><value>RUPT;</value></data>
+	<data name="ValueYes" xml:space="preserve"><value>SIM;</value></data>
+	<data name="ValueYesWithStockLow" xml:space="preserve"><value>VB BAIXO;</value></data>
+	<data name="VisitCount" xml:space="preserve"><value>: {0} visita(s) para realizar upload;</value></data>
+	<data name="VisitDataFail" xml:space="preserve"><value>: Error en la carga: {0};</value></data>
+	<data name="VisitDataFailNotAcceptable" xml:space="preserve"><value>: Error en la carga: Formato de datos no aceptable;</value></data>
+	<data name="VisitDataFailUnauthorized" xml:space="preserve"><value>: Error en la carga: no autorizado;</value></data>
+	<data name="VisitDataNoData" xml:space="preserve"><value>: No hay datos para cargar;</value></data>
+	<data name="VisitDataStart" xml:space="preserve"><value>: Cargando datos de las visitas;</value></data>
+	<data name="VisitDataUpload" xml:space="preserve"><value>: Fazendo upload da visita {0};</value></data>
+	<data name="VisitDataUploadFinished" xml:space="preserve"><value>: Cargar completado (estado: {0}, código: {1}; registros: {2});</value></data>
+	<data name="VisitDataUploadSucess" xml:space="preserve"><value>: Upload da visita {0} concluído (status: {1}; código: {2});</value></data>
+	<data name="VisitPhotoFail" xml:space="preserve"><value>: Error en la carga: {0};</value></data>
+	<data name="VisitPhotoFailNotAcceptable" xml:space="preserve"><value>: Error en la carga: Formato de datos no aceptable;</value></data>
+	<data name="VisitPhotoFailUnauthorized" xml:space="preserve"><value>: Error en la carga: no autorizado;</value></data>
+	<data name="VisitPhotoInsufficientTime" xml:space="preserve"><value>: Tiempo insuficiente para cargar fotos ({0} s);</value></data>
+	<data name="VisitPhotoNoData" xml:space="preserve"><value>: No hay fotos para cargar;</value></data>
+	<data name="VisitPhotoQualityCheckFail" xml:space="preserve"><value>: Error en la carga quality check: {0};</value></data>
+	<data name="VisitPhotoQualityCheckFailNotAcceptable" xml:space="preserve"><value>: Error en la carga quality check: Formato de datos no aceptable;</value></data>
+	<data name="VisitPhotoQualityCheckFailUnauthorized" xml:space="preserve"><value>: Error en la carga quality check: no autorizado;</value></data>
+	<data name="VisitPhotoQualityCheckInsufficientTime" xml:space="preserve"><value>: Tiempo insuficiente para cargar fotos quality check ({0} s);</value></data>
+	<data name="VisitPhotoQualityCheckNoData" xml:space="preserve"><value>: No hay fotos quality check para cargar;</value></data>
+	<data name="VisitPhotoQualityCheckQueueCount" xml:space="preserve"><value>: {0} foto(s) do quality check para realizar upload;</value></data>
+	<data name="VisitPhotoQualityCheckStart" xml:space="preserve"><value>: Cargando fotos do quality check de visitas;</value></data>
+	<data name="VisitPhotoQualityCheckUpload" xml:space="preserve"><value>: Cargando fotos quality check {0};</value></data>
+	<data name="VisitPhotoQualityCheckUploadFinished" xml:space="preserve"><value>: Carga quality check completado (estado: {0}, código: {1}; registros: {2});</value></data>
+	<data name="VisitPhotoQualityCheckUploadSucess" xml:space="preserve"><value>: Carga de foto quality check {0} completado (estado: {1}, código: {2});</value></data>
+	<data name="VisitPhotoQueueCount" xml:space="preserve"><value>: {0} foto(s) para realizar upload;</value></data>
+	<data name="VisitPhotoStart" xml:space="preserve"><value>: Cargando fotos de visitas;</value></data>
+	<data name="VisitPhotoUpload" xml:space="preserve"><value>: Cargando fotos {0};</value></data>
+	<data name="VisitPhotoUploadFinished" xml:space="preserve"><value>: Carga completado (estado: {0}, código: {1}; registros: {2});</value></data>
+	<data name="VisitPhotoUploadSucess" xml:space="preserve"><value>: Carga de foto {0} completado (estado: {1}, código: {2});</value></data>
+	<data name="WallLoadFailMessage" xml:space="preserve"><value>Não foi possível exibir a página, erro: {0};</value></data>
+	<data name="WallLoadFailMessageInternalServerError" xml:space="preserve"><value>Erro interno do servidor.;</value></data>
+	<data name="WallLoadFailMessageNotFound" xml:space="preserve"><value>Página não encontrada.;</value></data>
+	<data name="WallLoadFailNegativeButton" xml:space="preserve"><value>Tentar novamente;</value></data>
+	<data name="WallLoadFailPositiveButton" xml:space="preserve"><value>OK;</value></data>
+	<data name="WallLoadFailStatusCode" xml:space="preserve"><value>erro {0};</value></data>
+	<data name="WithoutConnection" xml:space="preserve"><value>No se puede acceder.\nVerifique la configuración para la conexión de datos y Wi-Fi;</value></data>
+
+</root>

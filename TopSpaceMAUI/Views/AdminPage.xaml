@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.AdminPage"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             Title="Admin Support">
+
+    <Grid ColumnDefinitions="*,*,*,*,*,*,*" RowDefinitions="*" HorizontalOptions="Start">
+
+            <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="0" Grid.Column="0">
+
+                <VerticalStackLayout>
+
+                    <ImageButton x:Name="btnInfo" Source="info.png" Clicked="btnInfo_Clicked"></ImageButton>
+                    <Label Text="App Info" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="0" Grid.Column="1">
+
+                <VerticalStackLayout>
+
+                    <ImageButton x:Name="btnQuery" Source="query.png" Clicked="btnQuery_Clicked"></ImageButton>
+                    <Label Text="Database" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="0" Grid.Column="2">
+
+                <VerticalStackLayout>
+
+                    <ImageButton x:Name="btnLogs" Source="logs.png" Clicked="btnLogs_Clicked"></ImageButton>
+                    <Label Text="Logs" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 10,10,10,10"
+                Background="WhiteSmoke"
+                Padding="16,8"
+                HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                Margin="5" Grid.Row="0" Grid.Column="3">
+
+                <VerticalStackLayout>
+
+                    <ImageButton x:Name="btnExplorer" Source="explorer.png" Clicked="btnExplorer_Clicked"></ImageButton>
+                    <Label Text="Explorer" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="WhiteSmoke"
+                    Padding="16,8"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                    Margin="5" Grid.Row="0" Grid.Column="4">
+
+                    <VerticalStackLayout>
+
+                        <ImageButton x:Name="btnExplorerCache" Source="cache.png" Clicked="btnExplorerCache_Clicked"></ImageButton>
+                        <Label Text="Cache" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                    </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="WhiteSmoke"
+                    Padding="16,8"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                    Margin="5" Grid.Row="0" Grid.Column="5">
+
+                    <VerticalStackLayout>
+
+                        <ImageButton x:Name="btnExcluirVisitas" Source="delete_visits.png" Clicked="btnExcluirVisitas_Clicked"></ImageButton>
+                        <Label Text="Excluir Visitas" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                    </VerticalStackLayout>
+
+            </Border>
+
+            <Border Stroke="#003366"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10,10,10,10"
+                    Background="WhiteSmoke"
+                    Padding="16,8"
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"
+                    Margin="5" Grid.Row="0" Grid.Column="6">
+
+                    <VerticalStackLayout>
+
+                        <ImageButton x:Name="btnClearMemory" Source="memory.png" Clicked="btnClearMemory_Clicked"></ImageButton>
+                        <Label Text="Liberar Memoria" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                    </VerticalStackLayout>
+
+            </Border>
+
+    </Grid>
+
+
+</ContentPage>

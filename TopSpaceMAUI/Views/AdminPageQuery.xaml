@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:TopSpaceMAUI.ViewModel"
+             x:Class="TopSpaceMAUI.AdminPageQuery"
+             Title="Database Query">
+
+    <ContentPage.BindingContext>
+        <viewModels:AdminQueryViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+        <Picker Title="Selecione uma Tabela"
+                ItemsSource="{Binding Tables}"
+                SelectedItem="{Binding SelectedTable}" />
+
+        <Button Text="CONSULTAR"
+                Clicked="Button_Clicked"
+                Margin="0,20,0,20" />
+
+        <ListView x:Name="ListResultQuery"></ListView>
+
+    </StackLayout>
+
+</ContentPage>

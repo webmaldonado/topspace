@@ -1,0 +1,232 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>TopSpaceMAUI</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>TopSpace</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.topspacemaui</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">29.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup>
+	  <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+	  <Title>TopSpace</Title>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	  <CreatePackage>false</CreatePackage>
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+
+	  <CodesignProvision>Ronald Maldonado</CodesignProvision>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	  <CreatePackage>false</CreatePackage>
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
+	  <ApplicationTitle>TopSpace</ApplicationTitle>
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android34.0|AnyCPU'">
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android34.0|AnyCPU'">
+	  <ApplicationId>com.bayer.topspacemaui</ApplicationId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	  <WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#003366" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\logo_bayer_topspace.png" Color="Black" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiImage Update="Resources\Images\dotnet_bot %28copiar%29.png">
+		  <Resize>True</Resize>
+		  <BaseSize>300,185</BaseSize>
+		</MauiImage>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="appsettings.Development.json" />
+	  <None Remove="appsettings.json" />
+	  <None Remove="Resources\Images\background.png" />
+	  <None Remove="Resources\Images\logo_bayer_topspace.png" />
+	  <None Remove="Resources\Images\banner_1.jpg" />
+	  <None Remove="Resources\Images\check_in.png" />
+	  <None Remove="Resources\Images\sync.png" />
+	  <None Remove="Resources\Images\support.png" />
+	  <None Remove="Resources\Images\banner_2.jpeg" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\thumbdown.svg" />
+	  <None Remove="Resources\Images\thumbup.svg" />
+	  <None Remove="Resources\Images\user.png" />
+	  <None Remove="Resources\Images\version.png" />
+	  <None Remove="Resources\Images\sync_info.png" />
+	  <None Remove="ViewModel\" />
+	  <None Remove="Resources\Images\sync_animated.png" />
+	  <None Remove="Resources\Images\camera.png" />
+	  <None Remove="Resources\Images\remove.png" />
+	  <None Remove="Resources\Images\trash.png" />
+	  <None Remove="Resources\Images\test_photo.jpg" />
+	  <None Remove="Resources\Images\nothing.png" />
+	  <None Remove="Resources\Images\multiples.png" />
+	  <None Remove="Resources\Images\edit.png" />
+	  <None Remove="Components\" />
+	  <None Remove="Resources\Images\camera_all.png" />
+	  <None Remove="Resources\Images\ok.png" />
+	  <None Remove="Resources\Images\nok.png" />
+	  <None Remove="Resources\Images\ram_memory.png" />
+	  <None Remove="Resources\Images\info.png" />
+	  <None Remove="Resources\Images\cache.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="appsettings.Development.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	  <Content Include="appsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="4.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="FluentFTP" Version="50.0.1" />
+		<PackageReference Include="GeoCoordinate.NetCore" Version="1.0.0.1" />
+		<PackageReference Include="ICSharpCode.SharpZipLib.dll" Version="0.85.4.369" />
+		<PackageReference Include="Measurements" Version="1.2.3" />
+		<PackageReference Include="Microsoft.Datasync.Client" Version="6.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" />
+		<PackageReference Include="Microsoft.Graph" Version="5.56.0" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
+		<PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.61.3" />
+		<PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.61.3" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="RestSharp" Version="111.3.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="SQLitePCL.raw" Version="0.9.2" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.3" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="ViewModel\VisitDataActionViewModel.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="ViewModel\VisitDataActionViewModel %28copiar%29.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.es.resx">
+	    <SubType>Designer</SubType>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="appsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\PictureShelfView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Sync.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\banner_1.jpg" />
+	  <BundleResource Include="Resources\Images\check_in.png" />
+	  <BundleResource Include="Resources\Images\sync.png" />
+	  <BundleResource Include="Resources\Images\support.png" />
+	  <BundleResource Include="Resources\Images\banner_2.jpeg" />
+	  <BundleResource Include="Resources\Images\home.png" />
+	  <BundleResource Include="Resources\Images\user.png" />
+	  <BundleResource Include="Resources\Images\version.png" />
+	  <BundleResource Include="Resources\Images\sync_info.png" />
+	  <BundleResource Include="Resources\Images\sync_animated.png" />
+	  <BundleResource Include="Resources\Images\camera.png" />
+	  <BundleResource Include="Resources\Images\remove.png" />
+	  <BundleResource Include="Resources\Images\trash.png" />
+	  <BundleResource Include="Resources\Images\test_photo.jpg" />
+	  <BundleResource Include="Resources\Images\nothing.png" />
+	  <BundleResource Include="Resources\Images\multiples.png" />
+	  <BundleResource Include="Resources\Images\edit.png" />
+	  <BundleResource Include="Resources\Images\camera_all.png" />
+	  <BundleResource Include="Resources\Images\ok.png" />
+	  <BundleResource Include="Resources\Images\nok.png" />
+	  <BundleResource Include="Resources\Images\ram_memory.png" />
+	  <BundleResource Include="Resources\Images\info.png" />
+	  <BundleResource Include="Resources\Images\cache.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Components\" />
+	</ItemGroup>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionTopSpaceMAUIHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+</Project>

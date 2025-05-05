@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TopSpaceMAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TopSpaceMAUI"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="True"
+    FlowDirection="RightToLeft"
+    Title="TopSpace">
+
+    <Shell.Resources>   
+
+        <Style Class="FlyoutItemLabelStyle" TargetType="Label"> 
+            <Setter Property="FontSize"   Value="20" />
+        </Style>
+
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <Grid ColumnDefinitions="50, 1*" RowDefinitions="1*, 1*" BackgroundColor="{StaticResource Primary}" Padding="10">
+            <Image x:Name="imgUser" Source="user.png" HeightRequest="50" Grid.Column="0" Grid.Row="0" />
+            <Label x:Name="lblUserName" Text="User.Name" Margin="10" FontSize="Medium" VerticalTextAlignment="Center" TextColor="White" Grid.Column="1" Grid.Row="0"></Label>
+            <HorizontalStackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand">
+                <Button x:Name="btnLogin" Text="Entrar" Clicked="btnLogin_Clicked"  HorizontalOptions="End" Background="White" TextColor="Blue" HeightRequest="40" WidthRequest="70" Margin="10,0"></Button>
+                <Button x:Name="btnLogout" Text="Sair" Clicked="BtnLogout_Clicked"  HorizontalOptions="End" Background="White" TextColor="Red" HeightRequest="40" WidthRequest="70"></Button>
+            </HorizontalStackLayout>
+            
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!--<Shell.TitleView>
+        <HorizontalStackLayout>
+            <Label x:Name="MemoryUsageLabel" Text="Memória: 0 MB" FontSize="14" TextColor="White" Margin="20,5,0,5" Padding="10"  />
+            <Image Source="ram_memory.png" WidthRequest="25" />
+        </HorizontalStackLayout>
+    </Shell.TitleView>-->
+    <Shell.TitleView>
+        <ContentView IsVisible="False" HeightRequest="1" WidthRequest="1"/>
+    </Shell.TitleView>
+
+
+    <ShellContent
+        Title="Inicio"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Icon="home.png"
+        Route="Home" />
+
+    <ShellContent
+        x:Name="menuSync"
+        Title="Sincronização"
+        ContentTemplate="{DataTemplate local:Sync}"
+        Icon="sync.png"
+        Route="Sync" />
+
+    <ShellContent
+        x:Name="menuVisit"
+        Title="Visitas"
+        ContentTemplate="{DataTemplate local:VisitList}"
+        Icon="check_in.png"
+        Route="VisitList" />
+
+    <ShellContent
+        x:Name="menuAdmin"
+        Title="Suporte"
+        ContentTemplate="{DataTemplate local:AdminPage}"
+        Icon="support.png"
+        Route="Admin" />
+
+    <!--<ShellContent
+        x:Name="menuSyncBeta"
+        Title="SyncBeta"
+        ContentTemplate="{DataTemplate local:SyncBeta}"
+        Icon="support.png"
+        Route="SyncBeta" />-->
+
+    <Shell.FlyoutFooter>
+        <Grid HeightRequest="100" Padding="0, 10" BackgroundColor="{StaticResource Primary}">
+
+            <HorizontalStackLayout>
+                <Image Source="version.png"></Image>
+                <VerticalStackLayout>
+                    <Label x:Name="lblAppVersion" FontSize="20" Text="" TextColor="White" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblAppEnviorment" Text="" TextColor="White" HorizontalOptions="Start"></Label>
+                    <Label x:Name="lblAppApiAddress" Text="" TextColor="White" HorizontalOptions="Start"></Label>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+                
+
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

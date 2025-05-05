@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.VisitObjectivesPop"
+             BackgroundColor="#90000000"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <Frame VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Padding="20"
+        CornerRadius="20"
+        HasShadow="True">
+
+        <VerticalStackLayout>
+            <StackLayout Padding="1" BackgroundColor="{StaticResource Primary}" WidthRequest="600" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Objetivos" Padding="50" FontSize="30" TextColor="White" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <ListView x:Name="myObjectives" HasUnevenRows="True" RowHeight="70" WidthRequest="600" HeightRequest="300" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label Text="{Binding BrandName}" FontSize="20" MinimumWidthRequest="200"></Label>
+                                <Label Text="{Binding Metric}" FontSize="20" MinimumWidthRequest="200"></Label>
+                                <Label Text="{Binding Objective}" FontFamily="Verdana" FontSize="30" FontAttributes="Bold" HorizontalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnClose" Margin="10" Text="Close" Clicked="btnClose_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+
+        </VerticalStackLayout>
+    </Frame>
+
+</ContentPage>

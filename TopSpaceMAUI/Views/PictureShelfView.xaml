@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.Views.PictureShelfView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:popups="clr-namespace:TopSpaceMAUI.Views"
+             xmlns:util="clr-namespace:TopSpaceMAUI.Util"
+			 xmlns:vm="clr-namespace:TopSpaceMAUI.ViewModel"
+			 x:DataType="vm:PictureShelfViewModel">
+    <!--<toolkit:Popup.Resources>
+        <Style TargetType="{x:Type popups:PictureShelfView}">
+            <Setter Property="Size" Value="960,660" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="CanBeDismissedByTappingOutsideOfPopup" Value="False" />
+        </Style>
+    </toolkit:Popup.Resources>-->
+    <Frame VerticalOptions="Center"
+    HorizontalOptions="Center"
+    Padding="20"
+    BackgroundColor="White"
+    CornerRadius="20"
+    HasShadow="True">
+
+        <AbsoluteLayout x:Name="layDisplay">
+            <Image x:Name="imgPhoto" Aspect="Fill" WidthRequest="800" HeightRequest="540" AbsoluteLayout.LayoutBounds="80,60"></Image>
+            <Grid AbsoluteLayout.LayoutBounds="0,0,960,60" BackgroundColor="{StaticResource Primary}" Padding="5" ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="btnVoltar" Text="Voltar" Clicked="btnVoltar_Clicked" Margin="3" BackgroundColor="{StaticResource White}" TextColor="{StaticResource Primary}"></Button>
+                <Label  Grid.Column="1" Text=""></Label>
+                <Button Grid.Column="2" x:Name="btnDescartar" Text="Limpar tudo" Clicked="btnDescartar_Clicked" Margin="3" BackgroundColor="IndianRed" TextColor="Black"></Button>
+                <Button Grid.Column="3" x:Name="btnNewPicture" Text="Substituir foto" Clicked="btnNewPicture_Clicked" Margin="3" BackgroundColor="LightYellow" TextColor="Black"></Button>
+                <Button Grid.Column="4" x:Name="btnSalvar" Text="Salvar" Clicked="btnSalvar_Clicked" IsEnabled="True" Margin="3" BackgroundColor="LightGreen" TextColor="Black"></Button>
+            </Grid>
+
+            <ImageButton x:Name="btnLeft" AbsoluteLayout.LayoutBounds="0,60,80,540" Padding="20" Source="nok.png" BackgroundColor="#e04f5f"></ImageButton>
+            <ImageButton x:Name="btnRight" AbsoluteLayout.LayoutBounds="880,60,80,540" Padding="20" Source="nok.png" BackgroundColor="#e04f5f"></ImageButton>
+
+            <Grid AbsoluteLayout.LayoutBounds="0,600,960,60" BackgroundColor="{StaticResource Primary}" Padding="5" ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout Grid.Column="0">
+                    <Label FontSize="Large" x:Name="lblObjective" HorizontalOptions="Center" TextColor="{StaticResource Secondary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Objective}"></Span>
+                                <Span Text="%"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label FontSize="Small" Text="Objetivo" HorizontalOptions="Center" TextColor="{StaticResource Secondary}"></Label>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1">
+                    <Label FontSize="Large" x:Name="lblActual" HorizontalOptions="Center" TextColor="{StaticResource Secondary}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span x:Name="spanActual" Text="{Binding Score}"></Span>
+                                <Span Text="%"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label FontSize="Small" Text="Executado" HorizontalOptions="Center" TextColor="{StaticResource Secondary}"></Label>
+                </VerticalStackLayout>
+                <Label  Grid.Column="2" Text=""></Label>
+                <Button Grid.Column="3" x:Name="btnNewRuler" Text="Categoria" Clicked="btnNewRuler_Clicked" Margin="3" BackgroundColor="{StaticResource White}" TextColor="{StaticResource Primary}"></Button>
+                <Button Grid.Column="4" x:Name="btnNewArea" Text="{Binding Name}" Clicked="btnNewArea_Clicked" Margin="3" BackgroundColor="{StaticResource White}" TextColor="{StaticResource Primary}"></Button>
+                <ImageButton Grid.Column="5" x:Name="btnDeletar" WidthRequest="40" VerticalOptions="Center" HorizontalOptions="Center" Source="trash.png"  Clicked="btnDeletar_Clicked"></ImageButton>
+            </Grid>
+        </AbsoluteLayout>
+
+    </Frame>
+</ContentPage>

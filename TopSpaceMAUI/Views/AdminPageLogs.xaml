@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TopSpaceMAUI.AdminPageLogs"
+             Title="Logs de Erros">
+
+    <StackLayout Padding="10">
+
+        <HorizontalStackLayout HorizontalOptions="End" Spacing="8">
+            <Button Text="Enviar E-Mail" Clicked="OnSendEmailClicked" Margin="0,0,0,0"/>
+            <Button Text="Copiar" x:Name="BotaoCopiar" Clicked="BotaoCopiar_Clicked" BackgroundColor="Green" TextColor="White" Margin="0,0,0,0"/>
+            <Button Text="Limpar Logs" Clicked="OnClearClicked" BackgroundColor="Red" TextColor="White"/>
+        </HorizontalStackLayout>
+
+        <ScrollView VerticalOptions="FillAndExpand">
+            <Editor x:Name="LogLabel"
+                    FontSize="14"
+                    TextColor="{StaticResource Secondary}"
+                    IsReadOnly="True"
+                    AutoSize="TextChanges"/>
+        </ScrollView>
+
+
+    </StackLayout>
+
+</ContentPage>

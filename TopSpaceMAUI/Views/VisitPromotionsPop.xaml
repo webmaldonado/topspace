@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#90000000"
+             x:Class="TopSpaceMAUI.VisitPromotionsPop">
+
+<Frame VerticalOptions="Center"
+    HorizontalOptions="Center"
+    Padding="20"
+    CornerRadius="20"
+    HasShadow="True">
+
+
+    <StackLayout>
+
+        <CarouselView x:Name="myPromotions" WidthRequest="600" HeightRequest="370">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding Title}"
+                                    FontAttributes="Bold"
+                                    FontSize="20"
+                                    HorizontalOptions="Center"
+                                    FontFamily="Verdana"
+                                    VerticalOptions="Center" />
+                            <Label Text="{Binding Description}"
+                                    HorizontalOptions="Center" Margin="0,20,0,0" />
+                        </StackLayout> 
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+            <Button Text="Previous" Clicked="OnPreviousClicked" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+            <Label Text="{Binding Source={x:Reference myPromotions}, Path=Position}"
+                   HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+            <Label Text=" / "
+                HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+            <Label Text="{Binding Source={x:Reference myPromotions}, Path=ItemsSource.Count, StringFormat='{}{0}'}"
+                HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" />
+            <Button Text="Next" Clicked="OnNextClicked" BackgroundColor="{StaticResource Primary}" TextColor="White"/>
+        </StackLayout>
+
+        <Button x:Name="btnClose" Margin="10" Text="Close" Clicked="btnClose_Clicked" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+
+    </StackLayout>
+
+</Frame>
+
+</ContentPage>

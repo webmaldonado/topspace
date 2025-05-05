@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TopSpaceMAUI.ViewModel"
+             xmlns:controls="clr-namespace:TopSpaceMAUI.Components"
+             x:DataType="vm:VisitViewModel"
+             xmlns:modelTemp="clr-namespace:TopSpaceMAUI"
+             xmlns:model="clr-namespace:TopSpaceMAUI.Model"
+             x:Class="TopSpaceMAUI.Visit"
+             ControlTemplate="{StaticResource MyContentFooter}"
+             Title="Visit">
+
+    <ContentPage.Resources>
+        <Style x:Key="FocusedPickerStyle" TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Style.Triggers>
+                <Trigger TargetType="Picker" Property="IsFocused" Value="True">
+                    <Setter Property="BackgroundColor" Value="LightBlue" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <VerticalStackLayout>
+
+        <Grid Margin="10,10,0,0" RowDefinitions="*, *">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Row="0" Grid.Column="0" Margin="0,0,0,0">
+                <HorizontalStackLayout>
+                    <Border Stroke="Transparent" BackgroundColor="LightBlue" StrokeShape="RoundRectangle 5,5,5,5" Padding="15" Margin="0,0,0,0">
+                        <VerticalStackLayout>
+                            <Label Text="AVG Anterior" TextColor="Black" FontSize="8"></Label>
+                            <Label Text="{Binding PreviousScoreAVG}" TextColor="Black" FontFamily="Verdana" FontSize="18"></Label>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Stroke="Transparent" BackgroundColor="LightGreen" StrokeShape="RoundRectangle 5,5,5,5" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="AVG Atual" TextColor="Black" FontSize="8"></Label>
+                            <Label Text="{Binding CurrentScoreAVG}" TextColor="Black" FontFamily="Verdana" FontSize="18"></Label>
+                        </VerticalStackLayout>
+                    </Border>
+
+                </HorizontalStackLayout>
+
+                <CollectionView VerticalOptions="Center" ItemsLayout="VerticalList" ItemsSource="{Binding VisitHistory}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type vm:ListVisitHistoryViewModel}">
+                            <Border BackgroundColor="LightGreen" Padding="5">
+                                <HorizontalStackLayout VerticalOptions="Center">
+                                    <Image Source="calendar.png" WidthRequest="15" HeightRequest="15" Margin="0,0,5,0" />
+                                    <Label Text="{Binding VisitDate}" TextColor="Black" />
+                                    <Image Source="speed.png" WidthRequest="15" HeightRequest="15" Margin="10,0,5,0" />
+                                    <Label Text="{Binding Score}" TextColor="Black" />
+                                </HorizontalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout> 
+
+            <VerticalStackLayout Grid.Row="0" Grid.Column="1" Margin="10,0,0,0">
+                <Label Text="{Binding Name}" FontSize="25" FontFamily="Arial Black" FontAttributes="Bold" />
+                <Label Text="{Binding Address}" FontSize="15" />
+                <Label Text="{Binding CNPJ}" FontSize="15" />
+                <Label Text="{Binding Cluster}" FontSize="15" />
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout Grid.Row="0" Grid.Column="2" VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
+                <Button x:Name="btnFinalizar" BackgroundColor="Red" TextColor="White" Text="Finalizar" FontSize="15" HeightRequest="40" Margin="10,0,0,0" Clicked="btnFinalizar_Clicked" />
+                <Button x:Name="btnPromotions" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnPromotions_Clicked" Text="Avisos" FontSize="15" HeightRequest="40" Margin="10,0,0,0" />
+                <Button x:Name="btnObjectives" BackgroundColor="{StaticResource Primary}" TextColor="White" Clicked="btnObjectives_Clicked" Text="Objetivos" FontSize="15" HeightRequest="40" Margin="10,0,0,0" />
+                <Button x:Name="btnPesquisa" BackgroundColor="{StaticResource Primary}" TextColor="White" Text="Pesquisa" FontSize="15" HeightRequest="40" Margin="10,0,0,0" Clicked="btnPesquisa_Clicked" />
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0"></VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                <HorizontalStackLayout HorizontalOptions="Start" Margin="0,10,0,0">
+                    <Label Text="{Binding LabelScore}" FontSize="45" FontFamily="Arial Black" FontAttributes="Bold" VerticalTextAlignment="End" TextColor="{Binding LabelScoreColor}"></Label>
+                    <Label Text="/" FontSize="40" VerticalTextAlignment="Center" FontFamily="Arial Black" TextColor="Gray"></Label>
+                    <Label Text="100" FontSize="45" VerticalTextAlignment="End"  FontFamily="Arial Black" TextColor="Gray"></Label>
+                    <Label Text="{Binding LabelScoreName}" VerticalTextAlignment="End" FontSize="45" FontFamily="Arial Black" FontAttributes="Bold" TextColor="{Binding LabelScoreColor}" Margin="50,0,0,0"></Label>
+                </HorizontalStackLayout>
+
+                <Slider x:Name="sldScore" HorizontalOptions="Start" IsEnabled="False" Minimum="0" Maximum="100" WidthRequest="500" Value="{Binding SliderValue}" ValueChanged="Slider_ValueChanged"></Slider>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="End">
+
+                <StackLayout HorizontalOptions="Start" Margin="10,0">
+                    <!-- Cabeçalhos alinhados com as colunas -->
+                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*" IsVisible="{Binding LegendIsVisible}"
+                          WidthRequest="370" HorizontalOptions="Start" Padding="0,5,0,5">
+                        <Label Grid.Column="0" Text="" FontAttributes="Bold" FontFamily="Arial Black" HorizontalOptions="Start"/>
+                        <Label Grid.Column="1" Text="Mes Ant." FontAttributes="Bold" FontFamily="Arial Black" HorizontalOptions="Start"/>
+                        <Label Grid.Column="2" Text="Ano Ant." FontAttributes="Bold" FontFamily="Arial Black" HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <!-- CollectionView com os itens -->
+                    <CollectionView x:Name="myLegends" SelectionMode="None" WidthRequest="370" HorizontalOptions="Start" ItemsSource="{Binding VisitLegendViewModels}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type vm:VisitLegendViewModel}">
+                                <!-- Adicionando bordas para simular linhas -->
+                                <Frame HasShadow="False" BorderColor="LightGray" CornerRadius="0" Padding="0">
+                                    <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*">
+                                        <Label Grid.Column="0" Text="{Binding Description}" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                        <Label Grid.Column="1" Text="{Binding MonthPrev}" TextColor="{Binding MonthColor}" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                        <Image Grid.Column="1" Source="{Binding MonthImage}"></Image>
+                                        <Label Grid.Column="2" Text="{Binding YearPrev}" TextColor="{Binding YearColor}" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                        <Image Grid.Column="2" Source="{Binding YearImage}"></Image>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+            </VerticalStackLayout>
+
+        </Grid>
+
+        <ScrollView Orientation="Horizontal" Margin="0,20,0,0">
+            <StackLayout x:Name="menuBrands" Orientation="Horizontal" Padding="0"></StackLayout>
+        </ScrollView>
+
+        <Grid ColumnDefinitions="Auto,*">
+
+            <StackLayout Orientation="Vertical" Grid.Column="0">
+                <Button x:Name="btnMetricNaturalPoint" BackgroundColor="{StaticResource Primary}" TextColor="White" Text="Ponto Natural" Margin="10,10,10,0" CornerRadius="30" HeightRequest="80" WidthRequest="150" FontSize="15" Clicked="btnMetricNaturalPoint_Clicked"></Button>
+                <Button x:Name="btnMetricStock" BackgroundColor="{StaticResource Primary}" TextColor="White" Text="Presença" Margin="0,10,0,0" CornerRadius="30" HeightRequest="80" WidthRequest="150" FontSize="15" Clicked="btnMetricStock_Clicked"></Button>
+                <Button x:Name="btnMetricMerchandising" BackgroundColor="{StaticResource Primary}" TextColor="White" Text="Merchandising" Margin="0,10,0,0" CornerRadius="30" HeightRequest="80" WidthRequest="150" FontSize="15" Clicked="btnMetricMerchandising_Clicked"></Button>
+                <Button x:Name="btnMetricAction" BackgroundColor="{StaticResource Primary}" TextColor="White" Text="Ações" Margin="0,10,0,0" CornerRadius="30" HeightRequest="80" WidthRequest="150" FontSize="15" Clicked="btnMetricAction_Clicked"></Button>
+            </StackLayout>
+
+            <!-- PONTO NATURAL -->
+            <ContentView x:Name="ContentMetricNaturalPoint" Grid.Column="1" Padding="0" IsVisible="True">
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,*">
+
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Margin="30">
+                        <Label Text="Objetivo" TextColor="Green" FontSize="20"></Label>
+                        <Slider Value="{Binding VisitDataShelfViewModel.Objective}" Minimum="0" Maximum="100" WidthRequest="300" Margin="0,0,30,0" IsEnabled="False" ></Slider>
+                        <Label Text="{Binding VisitDataShelfViewModel.Objective}" TextColor="red"></Label>
+
+                        <Label Text="Execução" TextColor="Orange" FontSize="20" Margin="0,30,0,0"></Label>
+                        <Slider Value="{Binding VisitDataShelfViewModel.Score}" Minimum="0" Maximum="100" WidthRequest="300" Margin="0,0,30,0" IsEnabled="False" ></Slider>
+                        <Label Text="{Binding VisitDataShelfViewModel.Score}"></Label>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Margin="50">
+                        <Border WidthRequest="250" HeightRequest="150" BackgroundColor="{StaticResource Gray950}">
+                            <Image Source="{Binding VisitDataShelfViewModel.Photo}"></Image>
+                        </Border>
+                        <Button x:Name="btnShelfTakePhoto"
+                                Text="Adicionar uma Fotografia"
+                                WidthRequest="250"
+                                BackgroundColor="{StaticResource Primary}" TextColor="White"
+                                Command="{Binding VisitDataShelfViewModel.OpenCameraCommand}"></Button>
+                        <Button x:Name="btnShelfClearPhoto"
+                                BackgroundColor="Red"
+                                WidthRequest="250"
+                                TextColor="White"
+                                Text="Remover a Fotografia"
+                                Command="{Binding VisitDataShelfViewModel.ClearPhotoCommand}"></Button>
+                    </VerticalStackLayout>
+                    <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0">
+                        <Label Text="Pontos BLP" FontSize="30" VerticalOptions="End"></Label>
+                        <Label Text="{Binding VisitDataShelfViewModel.GradeWeight}" FontSize="40" FontAttributes="Bold" FontFamily="Arial Black" Margin="30, 0" VerticalOptions="End"></Label>
+                    </HorizontalStackLayout>
+
+                </Grid>
+            </ContentView>
+            
+            <!-- ESTOQUE -->
+            <ContentView x:Name="ContentMetricStock" Grid.Column="1" IsVisible="False" Padding="20">
+                <ScrollView>
+                <CollectionView x:Name="myStockList" SelectionMode="None" ItemsSource="{Binding VisitDataSKUViewModels}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type vm:VisitDataSKUViewModel}">
+                            <Grid RowDefinitions="*" ColumnDefinitions="*,Auto" BackgroundColor="{Binding LineColor}">
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="0" Padding="5">
+                                    <Label Text="{Binding Name}" FontSize="20" FontFamily="Arial Black" FontAttributes="Bold" MinimumWidthRequest="400" VerticalOptions="Start"></Label>
+                                    <HorizontalStackLayout>
+                                        <Label Text="Pontos BLP " FontSize="10" FontFamily="Verdana" VerticalOptions="End" TextColor="Gray"></Label>
+                                        <Label Text="{Binding GradeWeight}" FontSize="15" FontAttributes="Bold" FontFamily="Verdana" VerticalOptions="Start" TextColor="Orange"></Label>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                                    <ImageButton Source="minus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding RemoveCommand}"></ImageButton>
+                                    <Picker Style="{StaticResource FocusedPickerStyle}" TextColor="Black" Margin="20,5" WidthRequest="50" HorizontalTextAlignment="Center" FontSize="25" ItemsSource="{Binding ValueOptions}" SelectedItem="{Binding Value, Mode=TwoWay}" Title="Select a value" />
+                                    <ImageButton Source="plus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding AddCommand}"></ImageButton>
+                                </StackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                </ScrollView>
+            </ContentView>
+
+            <!-- MERCHANDISING -->
+            <ContentView x:Name="ContentMetricMerchandising" Grid.Column="1" IsVisible="False" Padding="20">
+                <ScrollView>
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="*" ColumnDefinitions="Auto,Auto,Auto">
+                        <ImageButton Grid.Row="0" Grid.Column="0" WidthRequest="20" HeightRequest="20" MinimumWidthRequest="20" MinimumHeightRequest="20" Margin="10,0"  x:Name="btnMerchandisingSelectAll" Source="multiples.png" Clicked="btnMerchandisingSelectAll_Clicked"></ImageButton>
+                        <Label Grid.Row="0" Grid.Column="1" FontSize="15" Padding="5" VerticalOptions="Center" Text="Selecione alavancas e tire uma foto única!"></Label>
+                        <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btnMerchandisingTakeAll" WidthRequest="20" HeightRequest="20"  Margin="4,0" Source="camera_all.png" Clicked="btnMerchandisingTakePhotos_Clicked"></ImageButton>
+                    </Grid>
+
+                    <CollectionView x:Name="myMerchandisingList" SelectionMode="None" ItemsSource="{Binding VisitDataMerchandisingViewModels}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type vm:VisitDataMerchandisingViewModel}">
+                                <Grid RowDefinitions="*" ColumnDefinitions="Auto,*,Auto,Auto,Auto,Auto,Auto">
+                                    <CheckBox IsChecked="{Binding IsItemSelected}" Grid.Row="0" Grid.Column="0"></CheckBox>
+                                    <VerticalStackLayout Padding="10" Grid.Row="0" Grid.Column="1">
+                                        <Label Text="{Binding Name}" FontSize="20" FontFamily="Arial Black" FontAttributes="Bold" VerticalOptions="Start"></Label>
+                                        <HorizontalStackLayout>
+                                            <Label Text="Pontos BLP " FontSize="10" FontFamily="Verdana" VerticalOptions="End" TextColor="Gray"></Label>
+                                            <Label Text="{Binding GradeWeight}" FontSize="15" FontAttributes="Bold" FontFamily="Verdana" VerticalOptions="Start" TextColor="Orange"></Label>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <Image Source="edit.png" Grid.Row="0" Grid.Column="2" Opacity="{Binding ImageEditOpacity}" IsVisible="{Binding ImageEditIsVisible}" HeightRequest="30" Margin="10,0">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding OpenPickerCommand}" CommandParameter="{Binding Source={x:Reference HiddenPicker}}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Picker x:Name="HiddenPicker" Grid.Row="0" Grid.Column="2"
+                                            ItemDisplayBinding="{Binding Description}"
+                                            ItemsSource="{Binding ExecutionOptions}"
+                                            SelectedItem="{Binding ExecutionSelectedValue, Mode=TwoWay}"
+                                            IsVisible="{Binding IsPickerExecutionVisible}"
+                                            Title="Select a value"
+                                            WidthRequest="100">
+                                    </Picker>
+
+                                    <HorizontalStackLayout Grid.Row="0" Grid.Column="3">
+                                        <ImageButton Source="minus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding RemoveCommand}"></ImageButton>
+                                        <Picker Style="{StaticResource FocusedPickerStyle}" TextColor="Black" Margin="20,5" WidthRequest="50" HorizontalTextAlignment="Center" FontSize="25" ItemsSource="{Binding ValueOptions}" SelectedItem="{Binding Value, Mode=TwoWay}" Title="Select a value" />
+                                        <ImageButton Source="plus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding AddCommand}"></ImageButton>
+                                    </HorizontalStackLayout>
+                                    <ImageButton x:Name="btnActionTakePhoto" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Source="camera.png" Command="{Binding OpenCameraCommand}" CommandParameter="{Binding}" Margin="20, 0"></ImageButton>
+                                    <Border Grid.Row="0" Grid.Column="5" BackgroundColor="#f6f6f5" Stroke="#e6e5e2" StrokeThickness="2" WidthRequest="100" HeightRequest="60" Margin="0,0,0,0">
+                                        <Image Aspect="AspectFill" Source="{Binding Photo}" HorizontalOptions="Start">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ShowFullImage"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Border>
+                                    <ImageButton Grid.Row="0" Grid.Column="6" Source="trash.png" HeightRequest="40" WidthRequest="40" Margin="10,0" Command="{Binding ClearPhotoCommand}" CommandParameter="{Binding}"></ImageButton>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    
+                </VerticalStackLayout>
+                </ScrollView>
+            </ContentView>
+
+            <!-- ACOES -->
+            <ContentView x:Name="ContentMetricAction" Grid.Column="1" IsVisible="False">
+                <ScrollView>
+                    <CollectionView x:Name="myActionsList" SelectionMode="None" ItemsSource="{Binding VisitDataActionViewModels}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="{x:Type vm:VisitDataActionViewModel}">
+                                <Grid RowDefinitions="*" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
+                                    <VerticalStackLayout Grid.Row="0" Grid.Column="0" Padding="10">
+                                        <Label Text="{Binding Name}" FontSize="20" FontFamily="Arial Black" FontAttributes="Bold" MinimumWidthRequest="400" VerticalOptions="Start"></Label>
+                                        <HorizontalStackLayout>
+                                            <Label Text="Pontos BLP " FontSize="10" FontFamily="Verdana" VerticalOptions="End" TextColor="Gray"></Label>
+                                            <Label Text="{Binding GradeWeight}" FontSize="15" FontAttributes="Bold" FontFamily="Verdana" VerticalOptions="Start" TextColor="Orange"></Label>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                    <HorizontalStackLayout Grid.Row="0" Grid.Column="1">
+                                        <ImageButton Source="minus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding RemoveCommand}"></ImageButton>
+                                        <Picker Style="{StaticResource FocusedPickerStyle}" TextColor="Black" Margin="20,5" WidthRequest="50" HorizontalTextAlignment="Center" FontSize="25" ItemsSource="{Binding ValueOptions}" SelectedItem="{Binding Value, Mode=TwoWay}" Title="Select a value" />
+                                        <ImageButton Source="plus.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" Command="{Binding AddCommand}"></ImageButton>
+                                    </HorizontalStackLayout>
+                                    <ImageButton x:Name="btnActionTakePhoto" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" WidthRequest="40" HeightRequest="40" Source="camera.png" Command="{Binding OpenCameraCommand}" CommandParameter="{Binding}" Margin="20, 0"></ImageButton>
+                                    <Border Grid.Row="0" Grid.Column="3" BackgroundColor="#f6f6f5" Stroke="#e6e5e2" StrokeThickness="2" WidthRequest="100" HeightRequest="60" Margin="0,0,0,0">
+                                        <Image Aspect="AspectFill" Source="{Binding Photo}" HorizontalOptions="Start" />
+                                    </Border>
+                                    <ImageButton Grid.Row="0" Grid.Column="4" Source="trash.png" HeightRequest="40" WidthRequest="40" Margin="10,0" Command="{Binding ClearPhotoCommand}" CommandParameter="{Binding}"></ImageButton>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
+            </ContentView>
+
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
